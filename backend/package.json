@@ -1,0 +1,31 @@
+{
+  "name": "xwz-parking-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "XWZ LTD Car Parking Management System - Backend (microservices)",
+  "scripts": {
+    "setup:env": "node scripts/setup-env.mjs",
+    "install:all": "npm run install:gateway && npm run install:auth && npm run install:user && npm run install:parking && npm run install:carentry && npm run install:report && npm run install:notification",
+    "install:gateway": "cd services/api-gateway && npm install",
+    "install:auth": "cd services/auth-service && npm install",
+    "install:user": "cd services/user-service && npm install",
+    "install:parking": "cd services/parking-service && npm install",
+    "install:carentry": "cd services/car-entry-service && npm install",
+    "install:report": "cd services/report-service && npm install",
+    "install:notification": "cd services/notification-service && npm install",
+    "seed": "cd services/auth-service && npm run seed && cd ../parking-service && npm run seed && cd ../car-entry-service && npm run seed",
+    "dev": "scripts\\start-backend.bat",
+    "dev:backend": "scripts\\start-backend.bat",
+    "dev:mux": "concurrently -n GATEWAY,AUTH,USER,PARKING,CARENTRY,REPORT,NOTIFY -c cyan,green,yellow,blue,magenta,white,gray \"npm:dev:gateway\" \"npm:dev:auth\" \"npm:dev:user\" \"npm:dev:parking\" \"npm:dev:carentry\" \"npm:dev:report\" \"npm:dev:notification\"",
+    "dev:gateway": "cd services/api-gateway && npm run dev",
+    "dev:auth": "cd services/auth-service && npm run dev",
+    "dev:user": "cd services/user-service && npm run dev",
+    "dev:parking": "cd services/parking-service && npm run dev",
+    "dev:carentry": "cd services/car-entry-service && npm run dev",
+    "dev:report": "cd services/report-service && npm run dev",
+    "dev:notification": "cd services/notification-service && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
