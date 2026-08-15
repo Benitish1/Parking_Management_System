@@ -1,6 +1,6 @@
-# 🅿️ XWZ Parking — Smart Parking Management System
+# Smart Parking Management System
 
-A **production-grade, full-stack Car Parking Management System** for **XWZ LTD (Kigali, Rwanda)**, rebuilt from a monolith into a **true microservices architecture**.
+A **production-grade, full-stack Car Parking Management System**, rebuilt from a monolith into a **true microservices architecture**.
 
 > Register parkings, track car entries & exits, auto-bill drivers by duration, verify accounts via email OTP, and view real-time analytics — all behind a single API Gateway with a premium React dashboard.
 
